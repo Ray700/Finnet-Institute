@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0F3758;
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #218703, #0F3758);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .header-text {
+            flex: 1;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        header p {
+            margin: 10px 0;
+            color: #E5E7E9;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+        }
+
+        nav a {
+            color: #FFD700; 
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #166502;
+            border-radius: 5px;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside, .content {
+            background-color: #1A293F;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 25%;
+        }
+
+        aside {
+            flex: 1 1 30%;
+            margin-left: -10px;
+            max-width: 50%;
+        }
+
+        .content {
+            max-width: 70%;
+        }
+
+        /* Article Styles */
+        .article {
+            margin-bottom: 20px;
+        }
+
+        .article-title {
+            cursor: pointer;
+            padding: 15px;
+            background-color: #2D415A;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .article-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #243B55;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .article-content.active {
+            max-height: 1000px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1A293F;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Button Styles */
+        button {
+            background-image: linear-gradient(to bottom, #218703, #166502);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 20px 0 0;
+            }
+            
+            aside, .content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="header-text">
+                <h1>FINLEARN User Guide</h1>
+                <p>Guaranteed Financial Security</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ONLINE SERVICES</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Navigation Sidebar -->
+        <aside>
+            <h2>Quick Links</h2>
+            <ul>
+<li><a href="login.html" onclick="event.stopPropagation();">How to login</a></li>
+
+
+                <li><a href="#" data-target="viewStatement">How to view member statement</a></li>
+                <li><a href="#" data-target="claimBenefits">How to claim my benefits</a></li>
+                <li><a href="#" data-target="viewProfile">How to view my profile</a></li>
+                <li><a href="#" data-target="editProfile">How to edit my profile</a></li>
+                <li><a href="#" data-target="transactionHistory">How to view transaction history</a></li>
+                <li><a href="#" data-target="schemeDetails">How to view scheme details</a></li>
+                <li><a href="#" data-target="vote">How to vote</a></li>
+                <li><a href="#" data-target="changePassword">How to change my password</a></li>
+                <li><a href="#" data-target="newsEvents">How to view news and events</a></li>
+                <li><a href="#" data-target="logout">How to logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Article Content -->
+        <section class="content">
+            <h2>FINLEARN: Member Portal User Guide</h2>
+            
+            <!-- Article 1: Login -->
+            <div class="article" id="login">
+                <h3 class="article-title">How to login</h3>
+                <div class="article-content">
+                    <p>1. Go to the portal website</p>
+                    <p>2. Enter your member ID</p>
+                    <p>3. Enter your password</p>
+                    <p>4. Click "Login"</p>
+                </div>
+            </div>
+
+            <!-- Article 2: View Statement -->
+            <div class="article" id="viewStatement">
+                <h3 class="article-title">How to view member statement</h3>
+                <div class="article-content">
+                    <p>1. Navigate to "My Account"</p>
+                    <p>2. Click "View Statement"</p>
+                    <p>3. Select statement period</p>
+                </div>
+            </div>
+
+            <!-- Article 3: Claim Benefits -->
+            <div class="article" id="claimBenefits">
+                <h3 class="article-title">How to claim my benefits</h3>
+                <div class="article-content">
+                    <p>1. Go to "Benefits" section</p>
+                    <p>2. Select benefit type</p>
+                    <p>3. Submit claim form</p>
+                </div>
+            </div>
+
+            <!-- Article 4: View Profile -->
+            <div class="article" id="viewProfile">
+                <h3 class="article-title">How to view my profile</h3>
+                <div class="article-content">
+                    <p>1. Click "My Profile"</p>
+                    <p>2. View personal details</p>
+                </div>
+            </div>
+
+            <!-- Article 5: Edit Profile -->
+            <div class="article" id="editProfile">
+                <h3 class="article-title">How to edit my profile</h3>
+                <div class="article-content">
+                    <p>1. Go to "My Profile"</p>
+                    <p>2. Click "Edit Profile"</p>
+                    <p>3. Update information</p>
+                    <p>4. Save changes</p>
+                </div>
+            </div>
+
+            <!-- Article 6: Transaction History -->
+            <div class="article" id="transactionHistory">
+                <h3 class="article-title">How to view transaction history</h3>
+                <div class="article-content">
+                    <p>1. Navigate to "Account Activity"</p>
+                    <p>2. Select date range</p>
+                    <p>3. View transaction details</p>
+                </div>
+            </div>
+
+            <!-- Article 7: Scheme Details -->
+            <div class="article" id="schemeDetails">
+                <h3 class="article-title">How to view scheme details</h3>
+                <div class="article-content">
+                    <p>1. Go to "Plan Information"</p>
+                    <p>2. Select scheme type</p>
+                    <p>3. View terms and conditions</p>
+                </div>
+            </div>
+
+            <!-- Article 8: Vote -->
+            <div class="article" id="vote">
+                <h3 class="article-title">How to vote</h3>
+                <div class="article-content">
+                    <p>1. Access "Member Voting"</p>
+                    <p>2. Review options</p>
+                    <p>3. Submit vote</p>
+                </div>
+            </div>
+
+            <!-- Article 9: Change Password -->
+            <div class="article" id="changePassword">
+                <h3 class="article-title">How to change my password</h3>
+                <div class="article-content">
+                    <p>1. Go to "Account Settings"</p>
+                    <p>2. Click "Change Password"</p>
+                    <p>3. Enter new password</p>
+                    <p>4. Confirm changes</p>
+                </div>
+            </div>
+
+            <!-- Article 10: News & Events -->
+            <div class="article" id="newsEvents">
+                <h3 class="article-title">How to view news and events</h3>
+                <div class="article-content">
+                    <p>1. Click "News & Updates"</p>
+                    <p>2. Browse latest announcements</p>
+                </div>
+            </div>
+
+            <!-- Article 11: Logout -->
+            <div class="article" id="logout">
+                <h3 class="article-title">How to logout</h3>
+                <div class="article-content">
+                    <p>1. Click "Account Options"</p>
+                    <p>2. Select "Logout"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Was this article helpful to you?</p>
+        <button id="yesBtn">Yes <span id="yesCount">0</span></button>
+        <button id="noBtn">No <span id="noCount">0</span></button>
+        <p>© 2025 Your Company. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Enhancements -->
+    <script>
+        // Collapsible Articles Functionality
+        document.querySelectorAll('.article-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('aside a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById(link.getAttribute('data-target'));
+                const content = target.querySelector('.article-content');
+                content.classList.toggle('active');
+            });
+        });
+
+        // Feedback Counter Animation
+        function updateCounter(element, value) {
+            element.textContent = value;
+            element.style.transform = 'scale(1.2)';
+            setTimeout(() => element.style.transform = 'scale(1)', 200);
+        }
+
+        // Yes Button Counter
+        let yesCount = 0;
+        document.getElementById('yesBtn').addEventListener('click', () => {
+            yesCount++;
+            updateCounter(document.getElementById('yesCount'), yesCount);
+        });
+
+        // No Button Counter
+        let noCount = 0;
+        document.getElementById('noBtn').addEventListener('click', () => {
+            noCount++;
+            updateCounter(document.getElementById('noCount'), noCount);
+        });
+    </script>
+</body>
+</html>

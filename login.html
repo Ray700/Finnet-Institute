@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #1A293F;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        button {
+            background-image: linear-gradient(to bottom, #218703, #166502);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo" style="height: 50px;">
+        </div>
+        <h2>Sign In</h2>
+        <form>
+            <input type="text" placeholder="Username" required style="padding: 10px; margin: 10px 0; width: 100%; border-radius: 5px; border: 1px solid #ccc;">
+            <input type="password" placeholder="Password" required style="padding: 10px; margin: 10px 0; width: 100%; border-radius: 5px; border: 1px solid #ccc;">
+        </form>
+
+        <button onclick="window.location.href='https://accounts.google.com/signin'">Sign in with Google</button>
+        <button onclick="window.location.href='https://www.facebook.com/login'">Sign in with Facebook</button>
+        <p><a href="finnet instruction.html" style="color: #FFD700;">View User Guide</a></p>
+        <p><a href="#" style="color: #FFD700;">Forgot Password?</a></p>
+        <p><a href="#" style="color: #FFD700;">Create an Account</a></p>
+
+    </div>
+</body>
+</html>
